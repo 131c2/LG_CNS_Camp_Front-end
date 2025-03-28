@@ -1,0 +1,25 @@
+<style>
+    /* odd 대신에 2n + 1 이라고 써도 됨.
+    2n 대신에 even 이라고 써도 됨. */
+
+    /* 같은 자식들은 다 묶음 */
+    .child>u:nth-child(3) {
+        background-color: greenyellow;
+    }
+
+    /* 같은 타입/태그만 가지고 체크, 다른타입은 빼고 셈 */
+    .type>u:nth-of-type(2n) {
+        background-color: greenyellow;
+    }
+</style>
+
+<body>
+    <div class="child">
+        <u>1번</u> <u>2번</u> <em>3번</em>
+        <u>4번</u> <u>5번</u> <u>6번</u>
+    </div>
+    <div class="type">
+        <u>1번</u> <u>2번</u> <em>3번</em>
+        <u>4번</u> <u>5번</u> <u>6번</u>
+    </div>
+</body>

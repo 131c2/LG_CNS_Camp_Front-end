@@ -1,0 +1,26 @@
+<Style>
+    body > div:first-child {
+        /* flex를 이용해서 
+        justify-content: center; 로 좌우 중앙정렬
+        align-items: center; 로 수직 중앙정렬 */
+
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        height: 50px;
+        border: 1px solid black;
+    }
+    div > div {
+        border: 1px solid red;
+        flex: 0;
+    }
+</Style>
+
+<body>
+    <div>
+        <div>A</div>
+        <div>B</div>
+        <div>C</div>
+    </div>
+</body>

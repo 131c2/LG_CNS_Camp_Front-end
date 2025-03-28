@@ -1,0 +1,111 @@
+<head>
+    <!--탭에 나오는 글씨 -->
+    <title>실험실</title>
+
+    <!-- 문서 내용이 깨지지 않고 올바르게 표시되도록 하는 중요한 역할 -->
+    <!-- UTF-8 : 전 세계의 거의 모든 문자와 기호를 표현할 수 있는 유니코드 인코딩 방식 -->
+    <meta charset="UTF-8" />
+
+    <!-- Suit 글꼴 - 한글과 영어를 지원하는 산세리프(Sans-serif) 글꼴
+    산(Sans)은 프랑스어로 없는 이라는 의미로 글자 획의 굵기가 변하지 않고
+    가로획 세로획 거의 일정하고, 획의 끝에 장식이 없음 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SUIT:wght@400;700&display=swap">
+    
+    <!-- Jua 글꼴 - 둥글고 친근한 느낌의 한글 글꼴 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jua&display=swap">
+    <style>
+        body {
+            /* Jua 글꼴을 먼저 사용하고
+            Jua를 사용할 수 없는 경우 sans-serif(고딕체)를 사용하라는 의미 */
+            font-family: "Jua", sans-serif;
+            background-color: bisque;
+            color: #333;
+            padding: 40px;
+        }
+        h1 {
+            text-align: center;
+        }
+        body > p {
+            text-align: end;
+        }
+        .box-container {
+            display: grid;
+            /* auto-fill은 사용 가능한 공간에 최대한 많은 열을 배치
+            minmax에서 사용가능한 각열의 너비를 지정.
+            1fr은 사용가능한 공간 내에서 한자리를 차지한다는 뜻 */
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 40px;
+            max-width: 780px;
+            margin: auto;
+        }
+        .box {
+            min-height: 170px;
+            min-width: 180px;
+            padding: 10px;
+            background: white;
+            border-radius: 16px;
+            /* 그림자이동 : 수평방향 수직방향 흐림반경 */
+            box-shadow: 0 0 50px rgba(49, 3, 3, 0.918);
+            text-align: center;
+        }
+        .box-content {
+            /* relative속성은 해당 요소 내부에 position: absolute로 설정된 자식요소들의 기준이 됨
+            top, right,bottom, left 속성을 사용하여 요소의 위치를 미세조정 할 수 있음 */
+            position : relative;
+        }
+        .default-content { 
+            min-height: 150px;
+            background-color: #d35050;
+            /* 애니메이션 효과 지정. opacity(불투명도) ease(천천히-> 빨리 ->느리게) */
+            transition: opacity 0.3s ease;
+        }
+        .hover-content {
+            
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease;
+            background-color: aliceblue;
+        }
+
+
+        .box:hover .default-content {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .box:hover .hover-content {
+            opacity: 1;
+            visibility: visible;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <p>일단 뭐라도 써놓기</p>
+    <h1>제목 크기로 써놓기</h1>
+    <div class="box-container">
+        <div class="box">
+            <div class="box-content">
+                <div class="text">텍스트
+                    <div class="default-content">
+                        처음화면
+                    </div>
+                    <div class="hover-content">
+                        호버화면
+                    </div>
+
+                </div>
+            </div>
+        </div>        
+        <div class="box">
+        </div>        
+        <div class="box">
+        </div>        
+    </div>
+</body>

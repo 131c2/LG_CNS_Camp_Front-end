@@ -1,0 +1,31 @@
+<style>
+    input + span { display: none;} 
+    /* input:checked + span { display: block;} 줄바꿈이 일어남*/
+    input:checked + span { display: inline-block;}
+    input:checked + span + span{ display: none;}
+    /* 마우스 가져다대면 색상이 나옴 */
+    label:hover { background-color: yellow;}
+    /* 누르고 있을때 색상이 나옴, 누르고 있다는것 -> active */
+    label:active { background-color: aqua;}
+    /* visited -> 하이퍼링크 갔다와도 파란색 유지 */
+    /* 가상클래스 선택자 -> focus , 선택하면 색상이 뜸*/
+    input:focus { background-color: aquamarine;}
+    input:hover { background-color: beige;}
+    /* hover랑 focus랑 같이 할 경우 */
+
+</style>
+
+<body>
+    <input type="text">
+    <a href="https://www.naver.com">네이버로 가기</a>
+    <!-- /* 글씨 클릭해도 체크되게만들기 -> label 이용 */ -->
+    <label> 
+        <input type="checkbox">
+        <span style="color:green;">선택O</span>
+        <span style="color: red;">선택X</span>
+    </label>
+    <hr>
+    <input type="checkbox">
+    <span style="color:green;">선택O</span>
+    <span style="color: red;">선택X</span>
+</body>

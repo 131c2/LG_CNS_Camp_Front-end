@@ -1,0 +1,41 @@
+<style>
+    div { display: none;}
+    [type=radio] { 
+        display: none;
+    }
+    [type=radio]:checked + label{
+        background-color: burlywood;
+    }
+    #a:checked ~ div:nth-of-type(1) {
+        display:block;
+    }
+    #b:checked ~ div:nth-of-type(2) {
+        display:block;
+    }
+    #c:checked ~ div:nth-of-type(3) {
+        display:block;
+    }
+    [for=c] {
+        position: absolute;
+        left: 0px; top: 30px;
+    }
+    div:first-child{
+        height: 50px;
+        display: relative;
+        border: 1px solid black;
+    }
+</style>
+
+<body>
+    <input type="radio" id='a' name='menu'>
+    <label for="a">A 메뉴</label>
+    <input type="radio" id='b' name='menu'>
+    <label for="b">B 메뉴</label>
+    <input type="radio" id='c' name='menu'>
+    <label for="c">C 메뉴</label>
+    <input type="radio" id='d' name='menu'>
+    <label for="d">D 메뉴</label>
+    <div>A 내용</div>
+    <div>B 내용</div>
+    <div>C 내용</div>
+</body>

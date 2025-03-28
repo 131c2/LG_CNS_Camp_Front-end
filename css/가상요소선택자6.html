@@ -1,0 +1,34 @@
+<style>
+    a::before {
+        content: '앵커 태그 - ';
+        color: skyblue;
+    }
+
+    a:active::after {
+        content: ' (' attr(href) ')';
+        color: purple;
+    }
+
+    a::selection {
+        background-color: cyan;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    a:visited {
+        color: blue;
+    }
+
+    a:active {
+        color: yellow;
+    }
+</style>
+
+<body>
+    <a href="http://ggoreb.com">GGoReb</a><br>
+    <a href="http://www.zdnet.co.kr">ZDNET</a><br>
+    <a href="http://www.oss.kr">공개SW포털</a><br>
+    <a href="http://bloter.net">블로터</a>
+</body>

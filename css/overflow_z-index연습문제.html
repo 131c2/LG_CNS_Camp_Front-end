@@ -1,0 +1,56 @@
+<style>
+    .container {
+        width: 400px;
+        height: 350px;
+        margin: 50px auto;
+        background-color: #f0f0f0;
+    }
+
+        
+        /* z-index 사용할때 position: absolute; 값을 꼭 넣자 */
+    .box1 {
+        background-color: rgba(76, 175, 80, 0.9);
+        position: absolute;
+        z-index: 1;
+        width: 200px;
+        height: 200px;
+        padding: 20px;
+        margin: 20px;
+    }
+
+    .box2 {
+        background-color: rgba(255, 87, 34, 0.9);
+        position: absolute;
+        z-index: 2;
+        width: 200px;
+        height: 200px;
+        padding: 20px;
+        margin: 40px;
+    }
+
+    .box3 {
+        background-color: rgba(33, 150, 243, 0.9);
+        position: absolute;
+        z-index: 3;
+        width: 200px;
+        height: 200px;
+        padding: 20px;
+        margin: 60px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="box box1">Box 1: Lorem ipsum dolor sit amet,
+            consectetur adipiscing elit. Quisque sit amet accumsan
+            arcu.
+        </div>
+        <div class="box box2">Box 2: Curabitur ac vehicula velit,
+            sit amet auctor arcu. Nullam nec libero vel ligula venenatis
+            faucibus.
+        </div>
+        <div class="box box3">Box 3: Duis auctor tincidunt ligula at
+            tincidunt. Integer nec massa nec risus ultrices vehicula.
+        </div>
+    </div>
+</body>
