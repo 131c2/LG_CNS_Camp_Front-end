@@ -1,0 +1,23 @@
+<!-- 한자리 수의 경우 앞에 0이 나오게 출력해보기 -->
+
+<body>
+    <script>
+        const date = new Date();
+        let hour = date.getHours();
+        let min = date.getMinutes();
+        let sec = date.getSeconds();
+        console.log("현재시각 : " + hour + "시 " + min + "분 " + sec + "초");
+
+        if(sec < 10) {
+            console.log('0'+sec);
+        }
+
+        if(min < 10) {
+            console.log('0'+min);
+        }
+
+        console.log('a');
+        console.log('b');
+        // replace
+    </script>
+</body>
