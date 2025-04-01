@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>다크 모드 예시</title>
+  <style>
+    /* 기본 스타일 (라이트 모드) */
+    :root {
+      --background-color: #ffffff;
+      --text-color: #333333;
+      --card-bg-color: #f0f0f0;
+      --button-bg: #4a7bff;
+      --button-text: white;
+      --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* 다크 모드가 선호될 때 색상 변수 변경 */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --background-color: #121212;
+        --text-color: #e0e0e0;
+        --card-bg-color: #2a2a2a;
+        --button-bg: #5d88ff;
+        --button-text: white;
+        --shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      }
+    }
+
+    /* 직접 테마 전환을 위한 클래스 */
+    .dark-theme {
+      --background-color: #121212;
+      --text-color: #e0e0e0;
+      --card-bg-color: #2a2a2a;
+      --button-bg: #5d88ff;
+      --button-text: white;
+      --shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .light-theme {
+      --background-color: #ffffff;
+      --text-color: #333333;
+      --card-bg-color: #f0f0f0;
+      --button-bg: #4a7bff;
+      --button-text: white;
+      --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    body {
+      font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+      background-color: var(--background-color);
+      color: var(--text-color);
+      transition: all 0.3s ease;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 800px;
+      width: 100%;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .card {
+      background-color: var(--card-bg-color);
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+    }
+
+    .theme-toggle {
+      margin: 20px 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    button {
+      background-color: var(--button-bg);
+      color: var(--button-text);
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 0 5px;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    code {
+      background-color: rgba(0, 0, 0, 0.1);
+      padding: 2px 5px;
+      border-radius: 3px;
+      font-family: monospace;
+    }
+
+    .explanation {
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>CSS 다크 모드 예시</h1>
+      <p>CSS의 <code>prefers-color-scheme</code> 미디어 쿼리를 사용한 다크 모드 전환 예시입니다.</p>
+    </div>
+
+    <div class="theme-toggle">
+      <button id="light-btn">라이트 모드</button>
+      <button id="dark-btn">다크 모드</button>
+      <button id="system-btn">시스템 설정</button>
+    </div>
+
+    <div class="card">
+      <h2>CSS 미디어 쿼리로 다크 모드 구현하기</h2>
+      <div class="explanation">
+        <p>사용자의 시스템 설정에 따라 자동으로 다크 모드를 감지하는 CSS 코드:</p>
+        <pre><code>@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212;
+    color: #e0e0e0;
+  }
+}</code></pre>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>다크 모드의 장점</h2>
+      <ul>
+        <li>어두운 환경에서 눈의 피로 감소</li>
+        <li>OLED 디스플레이에서 배터리 절약</li>
+        <li>일부 사용자에게는 가독성 향상</li>
+        <li>현대적인 디자인 트렌드</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    // 테마 토글 버튼에 이벤트 리스너 추가
+    document.getElementById('light-btn').addEventListener('click', () => {
+      document.body.className = 'light-theme';
+      localStorage.setItem('theme', 'light');
+    });
+
+    document.getElementById('dark-btn').addEventListener('click', () => {
+      document.body.className = 'dark-theme';
+      localStorage.setItem('theme', 'dark');
+    });
+
+    document.getElementById('system-btn').addEventListener('click', () => {
+      document.body.className = '';
+      localStorage.removeItem('theme');
+    });
+
+    // 저장된 테마 적용
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+      document.body.className = 'light-theme';
+    } else if (savedTheme === 'dark') {
+      document.body.className = 'dark-theme';
+    }
+  </script>
+</body>
+</html>
