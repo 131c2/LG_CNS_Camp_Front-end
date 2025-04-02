@@ -1,0 +1,21 @@
+<body>
+    <script>
+        const house = {
+            bathroom: 1,
+            room: 2,
+            address: ['제주도', '제주시', '연동'],
+            persons: [
+                { name: 'kim' },
+                { name: 'lee' }
+            ]
+        };
+        console.log(house);
+        delete house['bathroom'];
+        console.log(house);
+        const animals = ['DOG', 'CAT'];
+        house.animals = animals;
+        house['animals'] = animals;
+        console.log(house);             
+        
+    </script>
+</body>

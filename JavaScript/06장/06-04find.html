@@ -1,0 +1,21 @@
+<!-- find : 내가 원하는 것을 찾는 기능 -->
+ <body>
+    <script>
+        const arr = [10, 23, 29, 33, 37, 40];
+
+        const list = arr.find(c); //find는 하나만 찾을때
+        console.log(list);
+        const list2 = arr.filter(d); //filter는 여러개 찾을때
+        console.log(list2);
+                
+        function c(v, i ,a){
+            //return true; // 모든 값을 받음
+            return v == 23;
+        }
+        function d(v, i ,a){
+            //return true; 
+            return v > 30;
+            
+        }
+    </script>
+ </body>

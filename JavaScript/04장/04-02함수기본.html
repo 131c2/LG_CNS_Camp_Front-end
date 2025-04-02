@@ -1,0 +1,45 @@
+<body>
+    <script>
+        // callback : 나중에 부른다는 느낌?
+        function callback(p) {
+            let 위도 = p.coords.latitude;
+            let 경도 = p.coords.longitude;
+            console.log(위도, 경도);
+        }
+
+        //현재 내 위치(위도 / 경도) 알아내기
+        navigator.geolocation.getCurrentPosition(callback);
+    </script>
+    <script>
+        function sum(a, b) {
+            return a + b;
+        }
+
+        sum(1, 2); // 함수 실행
+
+        let a = sum; // 함수에 접근
+        a(3, 4);
+    </script>
+    <script>
+        function 동작() {
+            alert('출력');
+        }
+        //setTimeout : 지정된 시간만큼 대기 후 동작
+        setTimeout(동작, 2000); // 1/1000 밀리초
+    </script>
+
+    <div class="label"></div>
+    <div class="figure" style="width: 200px; height: 200px;"></div>
+    <script>
+        //일정시간 경과 후 동작
+        function callback2() {
+            const label = document.querySelector('.label');
+            label.innerHTML = '<h2>모습 변경</h2>';
+            const figure = document.querySelector('.figure');
+            figure.style.backgroundColor = 'red';
+            figure.style.borderRadius = '100px';
+        }
+        setTimeout(callback2, 2000);
+    </script>
+
+</body>

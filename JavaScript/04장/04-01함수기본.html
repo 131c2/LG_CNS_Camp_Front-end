@@ -1,0 +1,61 @@
+<body>
+    <script>
+        let n = Math.random();
+
+        function random(a, b) {
+            return a + b;
+        }
+
+        console.log(random(5, 8));
+    </script>
+    <script>
+        //값 전달
+        function changeName(name) {
+            name = 'tom';
+        }
+        const name = 'john';
+        changeName(name);
+        console.log(name);
+    </script>
+    <script>
+        //참조 주소의 전달
+        function changeNameByObject(obj) {
+            obj.name = 'tom';
+        }
+        const user = { name: 'john' };
+        changeNameByObject(user);
+        console.log(user);
+    </script>
+    <script>
+        //기본값 지정
+        function showMessage(message, from = 'unknown') {
+            console.log(`${message} by ${from}`);
+        }
+        showMessage('Hi!');
+    </script>
+    <script>
+        //가변인자(Rast Parameter)
+        function printAll(...args) {
+            for (let i = 0; i < args.length; i++) {
+                console.log(args[i]);
+            }
+            for (const arg of args) {
+                console.log(arg);
+            }
+            args.forEach((arg) => console.log(arg));
+        }
+        printAll('java', 'script', 'html/css');
+    </script>
+    <script>
+        //결과반환
+        function sum(a, b) {
+            return a + b;
+        }
+        const result = sum(1, 2); // 3
+        console.log(`sum: ${sum(1, 2)}`);
+        function nothing(a, b) {
+        }
+        console.log(`result: ${nothing(1, 2)}`);
+
+    </script>
+</body>
