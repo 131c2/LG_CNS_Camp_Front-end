@@ -1,0 +1,21 @@
+<body>
+    <input type="text"> inch
+    <button>계산</button>
+    <p></p>
+</body>
+<script>
+    //첫번째로 해야할 것.
+    const input = document.querySelector('input');
+    const button = document.querySelector('button');
+    const p = document.querySelector('p');
+
+    //두번째
+    // 변환 공식 : inch * 2.54 => cm
+    button.addEventListener('click', () => {
+        const value = input.value;
+        console.dir(value);
+
+        p.innerHTML = `${value * 2.54} cm`
+
+    });
+</script>

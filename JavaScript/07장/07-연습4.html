@@ -1,0 +1,37 @@
+<!-- 뭔가 애메해..  -->
+<!-- 일단 포커스 하면 계속해서 # 이나오고, -->
+<!-- 스페이스 바 눌렀을 때 # 뒤에 띄어쓰기도 안됐으면 좋겠어 -->
+
+<body>
+    검색어 입력 : <input type="text" name="search">
+</body>
+
+<script>
+    const input = document.querySelector('[name=search]');
+
+    input.addEventListener('focus', (event) => {
+
+        let search = event.target.value;
+        if (input.value.length === 0) {
+            event.target.value = search + '#';
+        }
+    });
+    // #이 있을때 지워서 중복해서 #이 써지는걸 막음
+    // #뒤에 글자가 쓰여있을땐 어떻게 하지.. ?
+
+    // input.addEventListener('blur', (event) => {
+    //     if (input.value === "#") {
+    //         input.value = ``;
+    //     }
+    // });
+
+
+    input.addEventListener('keyup', (event) => {
+        if (event.key === ' ') {
+            const space = event.target.value;
+            event.target.value = space + `, #`;
+        }
+    });
+
+
+</script>

@@ -1,0 +1,22 @@
+<body>
+    <h1>제목</h1>
+    <h3>클릭 횟수 : 0</h3>
+</body>
+<script>
+    /* 마우스 드래그 방지 이벤트*/
+    document.body.onselectstart = () => false;
+    let count = 0;
+
+    const h1 = document.querySelector('h1');
+    const h3 = document.querySelector('h3');
+
+    h1.addEventListener('click', () => {
+        count += 1;
+        //< > 를 보이게 하려면 채택
+        h3.textContent = `<h1>${count}</h1> 클릭 횟수 : ${count}`;
+        h3.innerText = `<h1>${count}</h1>클릭 횟수 : ${count}`;
+        //렌더링 된 느낌
+        h3.innerHTML = `<h1>${count}</h1>클릭 횟수 : ${count}`;
+        
+    });
+</script>

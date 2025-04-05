@@ -1,0 +1,33 @@
+<!-- API에서 원하는 데이터를 가져오는 방법 -->
+<body>
+    <div></div>
+    <script>
+        //fetch : js에서 통신을 하는 방법. 비동기/논블럭킹 방식으로 동작
+        //논블럭킹 : 윗 라인 동작이 끝나기 전에 아랫라인 동작
+        // await : 작업이 끝날때까지 기다리게 함. async 안에서만 작동
+        let url = "https://api.themoviedb.org/3/search/movie?api_key=cba95d401a14ab806ffc13a5052aab89&query=%EC%84%9C%EC%9A%B8";
+        async function run() {
+            const result = await fetch(url);
+            const data = await result.json(); // 데이터를 객체로 변환
+            console.log(data);
+
+            //data는 객체 : 객체는 key와 value를 가지고 있음.
+
+            const results = data.results; // results라는 key에 접근하여 value를 저장
+            console.log(results);
+            //results는 리스트 구조라는 것을 확인 가능
+
+            let html = '';
+            results.forEach((v) => {
+                let title = v.original_title;
+                html += `<h2>${title}</h2>`;
+                //console.log(title);                
+            });
+            document.querySelector('div').innerHTML = html;
+            
+        }
+        run();
+
+
+    </script>
+</body>

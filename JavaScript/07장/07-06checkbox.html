@@ -1,0 +1,30 @@
+<body>
+    <input type="checkbox">
+    <span>타이머 활성화</span>
+    <h1></h1>
+</body>
+<script>
+    let [timer, timerId] = [0, 0];
+    const h1 = document.querySelector('h1');
+    const checkbox = document.querySelector('input');
+    checkbox.addEventListener('change', (event) => {
+        if (event.target.checked) {
+            timerId = setInterval(() => {
+                timer += 1;
+                h1.textContent = `${timer}초`;
+            }, 1000);
+        } else {
+            clearInterval(timerId);
+        }
+    });
+
+    setTimeout(() => { }, 1000);
+    //1회만 동작.
+
+    setInterval(() => { }, 1000);
+    //반복 동작. 멈추기 전까진 계속 동작
+    
+    const c = setInterval(() => { }, 1000);
+    clearInterval(c); //동작을 멈춤.
+
+</script>
