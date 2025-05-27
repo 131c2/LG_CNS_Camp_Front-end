@@ -1,0 +1,34 @@
+<body>
+    <script>
+
+        const map = ['가위', '바위', '보'];
+        const player = 0;
+        const com = parseInt(Math.random() * 3);
+        console.log(`player: ${map[player]}, com: ${map[com]}`);
+        let result ;
+        if(player == com){
+            result ='비김';
+        }
+        else if(com == 1){
+            result = 'com이김';
+
+        }
+        else if(com == 2){
+            result ='player이김';
+        }
+        console.log(`결과: ${result}`);
+       
+
+        // // 0 <= x < 1 사이의 실수형 값
+        // let n = parseInt(Math.random() * 3);
+        // console.log(n);
+        // let player = 0;
+
+        // if(player == n) {
+        //     console.log('비김');
+        // }
+        // else if(player == 0 && n == 1){
+        //     console.log('Com 이김');
+        // }
+    </script>
+</body>

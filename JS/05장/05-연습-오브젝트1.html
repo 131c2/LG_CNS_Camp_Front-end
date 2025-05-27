@@ -1,0 +1,29 @@
+<body>
+    <script>
+        const article = {
+            num: 1,
+            title: 'A',
+            reply: [
+                { num: 3, title: 'A-3' },
+                { num: 2, title: 'A-2' },
+                { num: 1, title: 'A-1' }
+            ]
+        };
+    
+        // parse / parsing  원하는 부분을 잘라서 추출
+        for(const key in article){
+            let type = typeof article[key];
+            if(type == 'object') { 
+                for(const key2 in article[key]){
+                    console.log(article[key][key2]);
+                }
+            }
+            else {
+                console.log(article[key]);
+            }
+            //console.log(article[key] , typeof article[key]);
+            //typeof를 넣으면 속성을 확인함
+        }
+                        
+    </script>
+</body>

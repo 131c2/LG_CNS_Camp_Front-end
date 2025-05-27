@@ -1,0 +1,30 @@
+<!-- 무작위 번호 맞추기-->
+
+<body>
+    <script>
+        // 1. 중복되지 않는 3개의 번호 추출
+        
+        while (true) { //조건식 부분에 ture 라고 하면 무한 반복함.
+            const selected = []; // 값 초기화
+            while (selected.length < 3) {
+                const num = parseInt(Math.random() * 45) + 1;
+                if (selected.indexOf(num) == -1) {
+                    selected.push(num);
+                }
+            }
+            console.log(selected);
+
+            // 2. 추출된 번호 정렬하기
+            selected.sort((a, b) => a - b);
+
+            // 3. 제시된 번호와 비교하기
+            const lotto = [1, 8, 16];
+            if (lotto == selected.toString()) {
+                console.log('맞히기 성공');
+                break; //반복문 탈출. 강제 멈춤.
+            }
+        }
+
+
+    </script>
+</body>

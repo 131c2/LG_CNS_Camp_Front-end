@@ -1,0 +1,16 @@
+<body>
+    <div></div>
+    <script>
+        const arr = [1, 2, 3, 4, 5];
+        const arr2 = arr.map((v, i, a) => {
+            // return v * 2;
+            return `<p>${v}</p>`; //실제로는 이런식으로 사용됨
+        });
+        console.log(arr2);
+
+        arr2.forEach((v) => {
+            //바닐라 스크립트
+            document.querySelector('div').innerHTML += v; // =v 하면 계속 덮어쓰기하는 문제 발생 +=v 로 해결
+        });
+    </script>
+</body>

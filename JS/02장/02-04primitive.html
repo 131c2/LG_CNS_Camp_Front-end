@@ -1,0 +1,20 @@
+<body>
+    <script>
+        const str = 'JavaScript';
+        
+        //원하는 값이 몇번째에 있는지 확인
+        console.log(str.indexOf('v')); //출력 : 2 
+        console.log(str.indexOf('a', str.indexOf('a') + 1) + '번째'); //출력 : 3번째
+
+        //str안에 원하는 값이 존재하는지 확인 true/false
+        console.log(str.includes('v')); //출력 : true
+
+        //문자열 변환
+        console.log(str.replace("Java", "자바")); //출력 : 자바Script
+
+        //substr(시작인덱스, 추출할 문자수), substirng(시작인덱스, 끝인덱스+1)
+        console.log(str.substr(4, 2)); //출력 : Sc
+        console.log(str.substring(4, 7)); //출력 : Scr
+
+    </script>
+</body>

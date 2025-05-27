@@ -1,0 +1,21 @@
+<body>
+    <script>
+        //클로저 활용 예시. 온라인 시험 부정행위 확인
+        function sequence() {
+            let seq = 0;
+            return function () {
+                seq++;
+                return seq;
+            };
+        }
+        const check = sequence(); //브라우저가 포커스를 잃는경우
+        window.addEventListener('blur', () => {
+            const count = check();
+            if (count > 5) {
+                alert('시험 종료!');
+                window.close(); //브라우저(탭) 종료
+            }
+        });
+
+    </script>
+</body>

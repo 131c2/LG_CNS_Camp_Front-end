@@ -1,0 +1,22 @@
+<!-- setTimeout(함수, 2000); <-동기 + 비동기 -->
+
+<body>
+    <script>
+        const url = "https://api.themoviedb.org/3/search/movie?api_key=cba95d401a14ab806ffc13a5052aab89&query=서울"
+        async function run() {
+            const res = await fetch(url); //가져오는 함수. 논블럭킹
+            // 비동기 : (SSD, HDD 저장장치에 접근하거나 / 네트워크 / DB접근 )
+            const data = await res.json(); // 쓸 수 있게 변화 시키겠다 함수
+            console.log(data);
+
+            const results = data.results; // 리스트 []
+            for(const result of results) {
+                conts = original_title = result.original_title;
+                console.log(original_title);                
+            }
+        }
+        run();
+
+
+    </script>
+</body>

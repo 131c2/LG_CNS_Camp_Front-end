@@ -1,0 +1,54 @@
+<body>
+    <script>
+        //(초기화)
+
+        // 'object literal' syntax
+        const obj1 = {};
+        // 'object constructor' syntax
+        const obj2 = new Object();
+
+        //(속성 제어)
+
+        const obj = { name: 'Mike', age: 20 };
+        // 속성 조회
+        console.log(obj.name); // Dot 연산자 사용
+        console.log(obj['name']); // 대괄호 사용
+        // 속성 추가 또는 변경
+        obj.hasJob = false;
+        obj['hasJob'] = true;
+        console.log(obj.hasJob);
+        // 속성 삭제
+        delete obj.hasJob;
+        console.log(obj.hasJob);
+
+        //(속성 존재 확인)
+        const user = {
+            name: 'Bill',
+            age: 20,
+            hasCar: true
+        }
+        console.log('name' in user); // true
+        console.log('age' in user); // true
+        console.log('random' in user); // false
+        console.log(user.hasCar); // true
+
+    </script>
+    <script>
+        // 반복문을 이용한 속성 제어
+        const obj3 = {
+            'pizza': 'P',
+            'chicken': 'C',
+            'meat': 'M'
+        };
+        // - key를 알아낸 후 value 확인 (for … in)
+        for (const key in obj3) {
+                console.log(key, obj3[key]);
+            }
+        const list = ['a', 'b' ,'c'];
+        for(const key in list){
+            console.log(key, list[key]);
+            
+        }
+    </script>
+
+</body>

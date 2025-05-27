@@ -1,0 +1,21 @@
+<body>
+    <script>
+        let a, b, c, d;
+        a = 12
+        b = 'ab'
+        c = "cd"
+        d = '실험'
+        
+        // 줄바꿈 안하고 싶은땐 backtick을 잘 활용해보자
+        console.log(`${a} ${b} ${c} ${d}`);
+
+        const arr = [3, 1, 5];
+        //배열 안의 값을 오름차순으로 정리 해줌 
+        arr.sort();
+        console.log(arr);
+        
+        //내림차순으로 정렬
+        arr.sort((a,b) => b - a);
+        console.log(arr);
+    </script>
+</body>

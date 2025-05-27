@@ -1,0 +1,28 @@
+<body>
+    <script>
+        //배열 초기화
+        const arr1 = new Array();
+        const arr2 = [1, 2];
+
+        //인덱스를 이용한 접근
+        const animals = ['🐶', '🐱', '🐷'];
+        console.log(animals);
+        console.log(animals.length);
+        console.log(animals[0], animals[2]);
+        console.log(animals[3]); // undefined
+        console.log(animals[animals.length - 1]); // last
+
+        //반복문을 이용한 요소 제어
+        const animals2 = ['🐶', '🐱', '🐷'];
+        //- index(key)를 알아낸 후 value 확인 (for … in)
+
+        for (const key in animals2) {
+            console.log(key);
+        }
+
+        // - 모든 value를 순서대로 하나씩 꺼내어 확인 (for … of)
+        for (const value of animals2) {
+            console.log(value);
+        }
+    </script>
+</body>
