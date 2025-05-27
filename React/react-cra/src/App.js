@@ -7,7 +7,7 @@ import Card from 'react-bootstrap/Card';
 import Header from './Header';
 import Nav from './Nav';
 import Nav2 from './Nav2';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function BasicExample() {
   return (
@@ -57,13 +57,35 @@ function Comment(props) {
   )
 }
 
+
 function App() {
   const [list, setList] = useState([
-    'HTML', 'CSS', 'JavaScript']);
+    'HTML', 'CSS', 'JavaScript'])
   
+
+  const [toc, setToc] = useState([]);
+    
+  const getData = async () => {
+    const url = 'http://ggoreb.com/api/toc.jsp';
+    const res = await fetch(url);
+    const data = await res.json();
+    setToc(data);
+    
+  };
+  useEffect(() => {
+    getData();
+  }, []);
+  
+
   const [hide, setHide] = useState(false);
   return (
     <div className="App">
+      {
+        toc.map((v) => {
+          return <h3>{v.title}</h3>
+        })
+      }
+
       <button onClick={() => {
         setHide(!hide); //true 와 false 를 왕복
         // setHide(true);
