@@ -1,0 +1,29 @@
+.header {
+    background-color: bisque;
+    font-size: 2rem;
+}
+.h1{
+    position: relative;
+    margin: 0;
+}
+
+/* section{
+    background-color: cadetblue;
+    font-size: 1.5rem;
+    position: relative;
+    margin: 0;
+}
+.h4{
+    position: relative;
+    margin: 0;
+} */
+
+.article {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.footer{
+    border: 1px solid black;
+    border-radius: 10px;
+}
